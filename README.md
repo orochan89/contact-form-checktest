@@ -20,17 +20,13 @@
 
 ## 使用技術
 
-###
-
-・ PHP 7.4.9
-・ Laravel 8.\*
+・ PHP 7.4.9 　
+・ Laravel 8.*  
 ・ MySQL 8.0.26
 
 ## ER 図
 
 ## URL
 
-###
-
-・ 開発環境 : http://localhost/
+・ 開発環境 : http://localhost/  
 ・ phpMyAdmin : http://localhost:8080/
