@@ -1,0 +1,29 @@
+body {
+    
+}
+
+.thanks__content {
+    margin-top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thanks__content-item {
+    margin: 15px;
+    text-align: center;
+    color: #bba99a;
+}
+
+.thanks-form__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thanks-form__button-home {
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #bba99a;
+    color: #fff;
+}
