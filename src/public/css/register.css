@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    background-color: #F2ECE7;
+}
+
+.header-nav__inner {
+background: #f9f9f9;
+border: 1px solid #bba99a;
+position: absolute;
+right: 0;
+margin-right: 10%;
+padding: 10px 30px;
+box-sizing: border-box;
+}
+
+.header-nav__register {
+color: #bba99a;
+border: none;
+}
+
+.register-content {
+margin: 15px auto;
+text-align: center;
+}
+
+.register-content--title {
+    color: #bba99a;
+}
+
+.register-content__inner {
+    margin:15px 20%;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border: 1px solid #E6E3DD;
+    border-radius: 3px;
+}
+
+.register-content-form--title {
+    margin: 10px auto;
+    color: #bba99a;
+}
+
+.register-content-form__email-input {
+    margin: 0 auto;
+    padding: 15px auto;
+}
+
+.register-content-form__password-input {
+    margin: 0 auto;
+    padding: 15px auto;
+}
+
+.register-content-form__button {
+    margin: 15px auto;
+}
+
+.register-content-form__button-submit {
+    padding: 10px 20px;
+    background-color: #bba99a;
+    color: #fff;
+}
