@@ -1,0 +1,61 @@
+.contact__content {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact__content--title {
+    text-align: center;
+    font-size: 32px;
+    color: #bba99a;
+}
+
+.contact-form--table {
+    margin: 0 auto;
+}
+
+.contact-form--table__row {
+}
+
+.contact-form--table__th {
+
+}
+.contact-form--table__title {
+    color: #bba99a;
+}
+
+.contact-form--table__title::after {
+    content: "※";
+    color: red;
+}
+
+.contact-form--table__title--building {
+    color: #bba99a;
+}
+
+.contact-form--table__td {
+
+}
+
+.contact-form--table
+
+.contact-form--table-input-radio__label {
+    color: #bba99a;
+}
+
+.contact-form--table-input-radio {
+    accent-color: #bba99a;
+}
+
+.contact-form__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.contact-form__button-submit {
+    background: #bba99a;
+    color: #fff;
+    padding: 10px 25px;
+}

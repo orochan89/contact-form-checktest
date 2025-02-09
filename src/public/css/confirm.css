@@ -1,0 +1,51 @@
+.confirm-content {
+    text-align: center;
+    margin:  15px auto;
+}
+
+.confirm-content--title {
+    color: #bba99a;
+}
+
+.confirm-table {
+    margin: 10px auto;
+    border: 1px solid #f9f9f9;
+    border-radius: 3px;
+}
+
+.confirm-table__row {
+    padding: 10px 20px;
+}
+
+.confirm-table___th {
+    background: #bba99a;
+    color: #fff;
+    border: 1px solid #f9f9f9;
+}
+
+.confirm-table___td {
+    background: #fff;
+    color: #bba99a;
+    border: 1px solid #f9f9f9;
+}
+
+.confirm-form__button {
+    display: flex;
+    justify-content: center;
+}
+
+.confirm-form__button-submit {
+    margin: 10px;
+    padding: 10px 20px;
+    background: #bba99a;
+    color: #fff;
+}
+
+.confirm-form__button-fix {
+    margin: 10px;
+    padding: 10px 20px;
+    color: #bba99a;
+    border: none;
+}
+
+

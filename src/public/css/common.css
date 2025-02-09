@@ -1,0 +1,22 @@
+.header {
+    background: #fff;
+    border-bottom: 1px solid #bba99a;
+}
+
+
+.header__inner {
+    padding: 10px 0;
+}
+
+.header__title {
+    color: #bba99a;
+
+}
+
+.header-utilities {
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
