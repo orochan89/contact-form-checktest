@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ModalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,7 @@ Route::get('/login', [ContactController::class, 'login']);
 Route::get('/confirm', [ContactController::class, 'confirm']);
 
 Route::get('/thanks', [ContactController::class, 'thanks']);
+
+Route::get('/admin', [ContactController::class, 'admin']);
+
+Route::get('/modal', [ModalController::class, 'modal']);
