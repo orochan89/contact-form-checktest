@@ -34,10 +34,11 @@
 }
 
 .contact-form--table__td {
-
+    width: 20%;
 }
 
-.contact-form--table
+.contact-form--table__td--content {
+}
 
 .contact-form--table-input-radio__label {
     color: #bba99a;
@@ -45,6 +46,11 @@
 
 .contact-form--table-input-radio {
     accent-color: #bba99a;
+}
+
+.contact-form__table-input--detail {
+    width: 250%;
+    height: 150px;
 }
 
 .contact-form__button {

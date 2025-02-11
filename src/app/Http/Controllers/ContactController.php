@@ -12,7 +12,8 @@ class ContactController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $categories = Category::all();
+        return view('index', compact('categories'));
     }
 
     public function confirm(ContactRequest $request)
@@ -28,7 +29,7 @@ class ContactController extends Controller
         $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'tell', 'address', 'building', 'detail', 'content']);
         $tell = $request->tel1 . '-' . $request->tel2 . '-' . $request->tel3;
         $categories = Category::all();
-        Contact::create();
+        Contact::create($contact);
         return view('thanks');
     }
 
