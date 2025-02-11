@@ -35,7 +35,7 @@ class UserRequest extends FormRequest
         return [
             'name.required' => '名前を入力してください',
             'email.required' => 'メールアドレスを入力してください',
-            'email.email' => 'メールアドレスは「ユーザー名@ドメイン」形式で入力してください',
+            'email.email' => '有効なメールアドレスの形式で入力してください',
             'password.required' => 'パスワードを入力してください'
         ];
     }

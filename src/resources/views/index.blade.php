@@ -67,13 +67,13 @@
                         </p>
                     </th>
                     <td class="contact-form--table__td">
-                        <input class="contact-form__table-input" type="tel" name="tel-top"> -
+                        <input class="contact-form__table-input" type="tel1" name="tel1"> -
                     </td>
                     <td class="contact-form--table__td">
-                        <input class="contact-form__table-input" type="tel" name="tel-middle"> -
+                        <input class="contact-form__table-input" type="tel2" name="tel2"> -
                     </td>
                     <td class="contact-form--table__td">
-                        <input class="contact-form__table-input" type="tel" name="tel-bottom">
+                        <input class="contact-form__table-input" type="tel3" name="tel3">
                     </td>
                 </tr>
                 <tr class="contact-form--table__row">
@@ -105,6 +105,7 @@
                     </th>
                     <td class="contact-form--table__td">
                         <select class="contact-form__table-input" name="category">
+                            <option value="" selected>選択してください</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->category_id }}">{{ $category->content }}</option>
                             @endforeach

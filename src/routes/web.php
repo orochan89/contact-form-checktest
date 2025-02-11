@@ -1,12 +1,10 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ModalController;
 use App\Http\Controllers\UserController;
-use App\Models\Administrator;
-
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +18,7 @@ use App\Models\Administrator;
 
 // AdminAccount
 Route::get('/register', [UserController::class, 'register']);
-Route::post('/register', [UserController::class, 'register_store']);
+Route::post('/register', [UserController::class, 'store']);
 
 Route::get('/login', [UserController::class, 'login']);
 
@@ -36,10 +34,4 @@ Route::get('/confirm', [ContactController::class, 'confirm']);
 
 Route::get('/thanks', [ContactController::class, 'thanks']);
 
-Route::get('/admin', [ContactController::class, 'admin']);
-
 Route::get('/modal', [ModalController::class, 'modal']);
-
-Route::middleware('auth')->group(function () {
-    Route::get('/admin', [ContactController::class, 'admin']);
-});

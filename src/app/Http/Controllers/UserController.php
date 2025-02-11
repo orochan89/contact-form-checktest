@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -13,11 +14,11 @@ class UserController extends Controller
         return view('auth.register');
     }
 
-    public function store_register(FormRequest $request)
+    public function store(UserRequest $request)
     {
-        $users = $request->only(['name', 'email', 'password']);
-        User::create();
-        return view('auth.login', 'user');
+        $user = $request->only(['name', 'email', 'password']);
+        User::create($user);
+        return view('auth.login');
     }
 
     public function login()

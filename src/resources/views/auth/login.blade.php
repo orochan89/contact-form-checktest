@@ -15,11 +15,22 @@
 @section('content')
     <div class="login-content">
         <h2 class="login-content--title">
-            Login
+            login
         </h2>
         <div class="login-content__inner">
-            <form class="login-content-form" action="login-content-form" method="post">
+            <form class="login-content-form" action="/login" method="post">
                 @csrf
+                <div class="login-content-form___name">
+                    <h3 class="login-content-form--title">
+                        お名前
+                    </h3>
+                    <input class="login-content-form__name-input" type="text" name="name" value="{{ old('name') }}">
+                    @error('name')
+                        <p style="color: red">
+                            {{ $errors->first('name') }}
+                        </p>
+                    @enderror
+                </div>
                 <div class="login-content-form__email">
                     <h3 class="login-content-form--title">
                         メールアドレス
