@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Contact;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -11,28 +15,27 @@ class ContactController extends Controller
         return view('index');
     }
 
-    public function register()
+    public function confirm(ContactRequest $request)
     {
-        return view('register');
+        $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'address', 'building', 'detail', 'content']);
+        $tell = $request->tel1 . '-' . $request->tel2 . '-' . $request->tel3;
+        $categories = Category::all();
+        return view('confirm', compact('contact', 'tell', 'categories'));
     }
 
-    public function login()
+    public function store(ContactRequest $request)
     {
-        return view('login');
-    }
-
-    public function confirm()
-    {
-        return view('confirm');
-    }
-
-    public function thanks()
-    {
+        $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'tell', 'address', 'building', 'detail', 'content']);
+        $tell = $request->tel1 . '-' . $request->tel2 . '-' . $request->tel3;
+        $categories = Category::all();
+        Contact::create();
         return view('thanks');
     }
 
     public function admin()
     {
-        return view('admin');
+        $items = Contact::all();
+        $contents = Contact::Pagenate(7);
+        return view('admin', compact('items', 'contents'));
     }
 }

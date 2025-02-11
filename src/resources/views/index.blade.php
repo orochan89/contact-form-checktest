@@ -34,7 +34,7 @@
                     <td class="contact-form--table__td">
                         <label class="contact-form--table-input-radio__label" for="man">
                             <input class="contact-form--table-input-radio" type="radio" name="gender" value="man"
-                                id="man">男性
+                                id="man" checked>男性
                         </label>
                     </td>
                     <td class="contact-form--table__td">
@@ -104,10 +104,10 @@
                         </p>
                     </th>
                     <td class="contact-form--table__td">
-                        <select class="" name="category">
-                            {{-- @foreach ($categories as $category)
+                        <select class="contact-form__table-input" name="category">
+                            @foreach ($categories as $category)
                             <option value="{{$category}}">{{$category}}</option>
-                            @endforeach --}}
+                            @endforeach
                         </select>
                     </td>
                 </tr>

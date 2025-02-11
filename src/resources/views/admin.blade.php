@@ -49,6 +49,9 @@
                 </button>
                 <div class="pages"> </div>
             </form>
+            <div class="pagenation">
+                {{$content->links()}}
+            </div>
         </div>
         <table class="search-result-table">
             <tr class="search-result-table__row">
