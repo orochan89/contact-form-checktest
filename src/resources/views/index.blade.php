@@ -19,10 +19,10 @@
                         </p>
                     </th>
                     <td class="contact-form--table__td">
-                        <input class="contact-form__table-input" type="text" name="first-name" value="例:山田">
+                        <input class="contact-form__table-input" type="text" name="last-name" value="例:山田">
                     </td>
                     <td class="contact-form--table__td">
-                        <input class="contact-form__table-input" type="text" name="last-name" value="例:太郎">
+                        <input class="contact-form__table-input" type="text" name="first-name" value="例:太郎">
                     </td>
                 </tr>
                 <tr class="contact-form--table__row">
@@ -34,7 +34,7 @@
                     <td class="contact-form--table__td">
                         <label class="contact-form--table-input-radio__label" for="man">
                             <input class="contact-form--table-input-radio" type="radio" name="gender" value="man"
-                                id="man">男性
+                                id="man" checked>男性
                         </label>
                     </td>
                     <td class="contact-form--table__td">
@@ -104,21 +104,22 @@
                         </p>
                     </th>
                     <td class="contact-form--table__td">
-                        <select class="" name="category">
-                            {{-- @foreach ($categories as $category)
-                            <option value="{{$category}}">{{$category}}</option>
-                            @endforeach --}}
+                        <select class="contact-form__table-input" name="category">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->category_id }}">{{ $category->content }}</option>
+                            @endforeach
                         </select>
                     </td>
                 </tr>
                 <tr class="contact-form--table__row">
-                    <th class="contact-form--table__th">
+                    <th class="contact-form--table__th--content">
                         <p class="contact-form--table__title">
                             お問い合わせ内容
                         </p>
                     </th>
-                    <td class="contact-form--table__td">
-                        <input class="contact-form__table-input" class="" type="text" name="content">
+                    <td class="contact-form--table__td--content">
+                        <input class="contact-form__table-input--detail" type="text" name="content"
+                            value="{{ old('content') }}">
                     </td>
                 </tr>
             </table>

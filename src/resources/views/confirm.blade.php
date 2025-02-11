@@ -16,12 +16,13 @@
             <table class="confirm-table">
                 <tr class="confirm-table__row">
                     <th class="confirm-table___th">
-                        <p class="confirm-table--title">
-                            お名前
+                        <input class="confirm-table--title">
+                        お名前
                         <p>
                     </th>
                     <td class="confirm-table__td">
-
+                        <input type="text" name="first_name" value="{{ $contact['first_name'] }}" readonly>
+                        <input type="text" name="last_name" value="{{ $contact['last_name'] }}">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -31,9 +32,7 @@
                         <p>
                     </th>
                     <td class="confirm-table__td">
-                        <p class="confirm-table--item">
-                            aaa
-                        </p>
+                        <input type="text" name="gender" value="{{ $contact['gender'] }}" readonly>
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -43,9 +42,7 @@
                         <p>
                     </th>
                     <td class="confirm-table__td">
-                        <p class="confirm-table--item">
-                            aaa
-                        </p>
+                        <input type="email" name="email" value="{{ $contact['email'] }} readonly">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -55,9 +52,7 @@
                         <p>
                     </th>
                     <td class="confirm-table__td">
-                        <p class="confirm-table--item">
-                            aaa
-                        </p>
+                        <input type="tel" name="tel" value="{{ $contact['tel'] }}" readonly>
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -67,9 +62,7 @@
                         <p>
                     </th>
                     <td class="confirm-table__td">
-                        <p class="confirm-table--item">
-                            aaa
-                        </p>
+                        <input type="text" name="address" value="{{ $contact['address'] }}" readonly>
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -79,9 +72,7 @@
                         <p>
                     </th>
                     <td class="confirm-table__td">
-                        <p class="confirm-table--item">
-                            aaa
-                        </p>
+                        <input type="text" name="building" value="{{ $contact['building'] }}" readonly>
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -91,9 +82,7 @@
                         <p>
                     </th>
                     <td class="confirm-table__td">
-                        <p class="confirm-table--item">
-                            aaa
-                        </p>
+                        <input type="text" name="category" value="{{ $contact['category'] }}">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -103,9 +92,7 @@
                         <p>
                     </th>
                     <td class="confirm-table__td">
-                        <p class="confirm-table--item">
-                            aaa
-                        </p>
+                        <input type="text" name="content" value="{{ $contact['content'] }}" readonly>
                     </td>
                 </tr>
             </table>

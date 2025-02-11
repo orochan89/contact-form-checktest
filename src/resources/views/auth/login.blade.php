@@ -18,7 +18,7 @@
             Login
         </h2>
         <div class="login-content__inner">
-            <form action="login-content-form">
+            <form class="login-content-form" action="login-content-form" method="post">
                 @csrf
                 <div class="login-content-form__email">
                     <h3 class="login-content-form--title">
@@ -31,8 +31,8 @@
                     <h3 class="login-content-form--title">
                         パスワード
                     </h3>
-                    <input class="login-content-form__password-input" type="text" name="password"
-                        value="例:coachtech1106">
+                    <input class="login-content-form__password-input" type="password" name="password"
+                        value="{{ old('password') }}">
                 </div>
                 <div class="login-content-form__button">
                     <button class="login-content-form__button-submit">

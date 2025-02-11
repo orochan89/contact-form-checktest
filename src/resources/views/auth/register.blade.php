@@ -39,7 +39,7 @@
                         パスワード
                     </h3>
                     <input class="register-content-form__password-input" type="text" name="password"
-                        value="例:coachtech1106">
+                        value="{{ old('password') }}">
                 </div>
                 <div class="register-content-form__button">
                     <button class="register-content-form__button-submit">
