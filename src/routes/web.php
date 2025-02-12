@@ -24,7 +24,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', [ContactController::class, 'admin']);
 });
 
-//
 
 Route::get('/', [ContactController::class, 'index']);
 

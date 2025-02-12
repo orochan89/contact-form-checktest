@@ -5,7 +5,7 @@
 @endsection
 
 @section('header-nav')
-    <form method="get" action="/resister">
+    <form method="get" action="/register">
         @csrf
         <div class="header-nav__inner">
             <button class="header-nav__register" type="submit">
