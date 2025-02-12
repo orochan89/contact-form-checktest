@@ -5,11 +5,14 @@
 @endsection
 
 @section('header-nav')
-    <div class="header-nav__inner">
-        <a class="header-nav__register" href="/login">
-            login
-        </a>
-    </div>
+    <form method="get" action="/login">
+        @csrf
+        <div class="header-nav__inner">
+            <button class="header-nav__login" type="submit">
+                login
+            </button>
+        </div>
+    </form>
 @endsection
 
 @section('content')

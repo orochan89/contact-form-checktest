@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ModalController;
 use App\Http\Controllers\UserController;
+use App\Models\Contact;
 use App\Models\User;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,11 +20,6 @@ use App\Models\User;
 */
 
 // AdminAccount
-Route::get('/register', [UserController::class, 'register']);
-Route::post('/register', [UserController::class, 'store']);
-
-Route::get('/login', [UserController::class, 'login']);
-
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ContactController::class, 'admin']);
 });

@@ -5,11 +5,14 @@
 @endsection
 
 @section('header-nav')
-    <div class="header-nav__inner">
-        <a class="header-nav__register" href="/register">
-            register
-        </a>
-    </div>
+    <form method="get" action="/resister">
+        @csrf
+        <div class="header-nav__inner">
+            <button class="header-nav__register" type="submit">
+                register
+            </button>
+        </div>
+    </form>
 @endsection
 
 @section('content')
@@ -18,25 +21,19 @@
             login
         </h2>
         <div class="login-content__inner">
-            <form class="login-content-form" action="/login" method="post">
+            <form class="form" action="/login" method="post">
                 @csrf
-                <div class="login-content-form___name">
-                    <h3 class="login-content-form--title">
-                        お名前
-                    </h3>
-                    <input class="login-content-form__name-input" type="text" name="name" value="{{ old('name') }}">
-                    @error('name')
-                        <p style="color: red">
-                            {{ $errors->first('name') }}
-                        </p>
-                    @enderror
-                </div>
                 <div class="login-content-form__email">
                     <h3 class="login-content-form--title">
                         メールアドレス
                     </h3>
                     <input class="login-content-form__email-input" type="email" name="email"
                         value="{{ old('email') }}">
+                    @error('email')
+                        <p style="color: red">
+                            {{ $errors->first('email') }}
+                        </p>
+                    @enderror
                 </div>
                 <div class="login-content-form__password">
                     <h3 class="login-content-form--title">
@@ -44,9 +41,14 @@
                     </h3>
                     <input class="login-content-form__password-input" type="password" name="password"
                         value="{{ old('password') }}">
+                    @error('password')
+                        <p style="color: red">
+                            {{ $errors->first('password') }}
+                        </p>
+                    @enderror
                 </div>
                 <div class="login-content-form__button">
-                    <button class="login-content-form__button-submit">
+                    <button class="login-content-form__button-submit" type="submit">
                         ログイン
                     </button>
                 </div>

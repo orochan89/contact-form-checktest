@@ -5,12 +5,12 @@
 @endsection
 
 @section('header-nav')
-    <form class="header-form" action="/logout" method="post">
+    <form class="header-form" action="{{ route('logout') }}" method="post">
         @csrf
         <div class="header-nav__inner">
-            <a class="header-nav__logout" href="/">
+            <button class="header-nav__logout" type="submit">
                 logout
-            </a>
+            </button>
         </div>
     </form>
 @endsection
@@ -53,7 +53,7 @@
                 <div class="pages"> </div>
             </form>
             <div class="pagenation">
-                {{ $content->links() }}
+                {{-- {{ $content->links() }} --}}
             </div>
         </div>
         <table class="search-result-table">
