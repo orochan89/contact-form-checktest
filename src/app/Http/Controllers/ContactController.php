@@ -35,8 +35,18 @@ class ContactController extends Controller
 
     public function admin()
     {
-        $items = Contact::all();
-        $contents = Contact::Pagenate(7);
-        return view('admin', compact('items', 'contents'));
+        // $items = Contact::all();
+        // $contents = Contact::Pagenate(7);
+        return view('admin');
+    }
+
+    public function login()
+    {
+        return view('auth.login');
+    }
+
+    public function register()
+    {
+        return view('auth.register');
     }
 }

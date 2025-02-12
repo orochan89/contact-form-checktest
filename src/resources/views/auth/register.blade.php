@@ -5,11 +5,14 @@
 @endsection
 
 @section('header-nav')
-    <div class="header-nav__inner">
-        <a class="header-nav__register" href="/login">
-            login
-        </a>
-    </div>
+    <form method="get" action="/login">
+        @csrf
+        <div class="header-nav__inner">
+            <button class="header-nav__login" type="submit">
+                login
+            </button>
+        </div>
+    </form>
 @endsection
 
 @section('content')
@@ -18,7 +21,7 @@
             Register
         </h2>
         <div class="register-content__inner">
-            <form action="register-content-form">
+            <form class="register-content-form" action="/register" method="post">
                 @csrf
                 <div class="register-content-form___name">
                     <h3 class="register-content-form--title">
@@ -26,6 +29,11 @@
                     </h3>
                     <input class="register-content-form__name-input" type="text" name="name"
                         value="{{ old('name') }}">
+                    @error('name')
+                        <p style="color: red">
+                            {{ $errors->first('name') }}
+                        </p>
+                    @enderror
                 </div>
                 <div class="register-content-form__email">
                     <h3 class="register-content-form--title">
@@ -33,13 +41,23 @@
                     </h3>
                     <input class="register-content-form__email-input" type="email" name="email"
                         value="{{ old('email') }}">
+                    @error('email')
+                        <p style="color: red">
+                            {{ $errors->first('email') }}
+                        </p>
+                    @enderror
                 </div>
                 <div class="register-content-form__password">
                     <h3 class="register-content-form--title">
                         パスワード
                     </h3>
-                    <input class="register-content-form__password-input" type="text" name="password"
+                    <input class="register-content-form__password-input" type="password" name="password"
                         value="{{ old('password') }}">
+                    @error('password')
+                        <p style="color: red">
+                            {{ $errors->first('password') }}
+                        </p>
+                    @enderror
                 </div>
                 <div class="register-content-form__button">
                     <button class="register-content-form__button-submit">
