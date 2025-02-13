@@ -16,21 +16,36 @@ class ContactController extends Controller
         return view('index', compact('categories'));
     }
 
-    public function confirm(ContactRequest $request)
+    public function post(ContactRequest $request)
     {
-        $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'address', 'building', 'detail', 'content']);
-        $tell = $request->tel1 . '-' . $request->tel2 . '-' . $request->tel3;
-        $categories = Category::all();
-        return view('confirm', compact('contact', 'tell', 'categories'));
+        $input = $request->only(['first_name', 'last_name', 'gender', 'email', 'address', 'building', 'category_id', 'detail']);
+        $tell = $request->tel1 . $request->tel2 . $request->tel3;
+        $category = Category::find($input['category_id']);
+        $category_content = $category ? $category->content : null;
+        return view('confirm', compact('input', 'tell', 'category_content'));
     }
 
-    public function store(ContactRequest $request)
+    public function complete(Request $request)
     {
-        $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'tell', 'address', 'building', 'detail', 'content']);
-        $tell = $request->tel1 . '-' . $request->tel2 . '-' . $request->tel3;
-        $categories = Category::all();
-        Contact::create($contact);
-        return view('thanks');
+        if ($request->input('back') == 'back') {
+            return redirect('/')
+                ->withInput();
+        }
+        return view('/thanks');
+    }
+
+    public function confirm(Request $request)
+    {
+        $action = $request->input('action');
+
+        if ($action == 'back') {
+            return redirect('/')->withInput();
+        }
+        if ($action == 'complete') {
+            $contact = $request->only(['first_name', 'last_name', 'gender', 'email', 'tell', 'address', 'building', 'category_id', 'detail', 'content']);
+            Contact::create($contact);
+            return view('thanks');
+        }
     }
 
     public function admin()
@@ -38,15 +53,5 @@ class ContactController extends Controller
         // $items = Contact::all();
         // $contents = Contact::Pagenate(7);
         return view('admin');
-    }
-
-    public function login()
-    {
-        return view('auth.login');
-    }
-
-    public function register()
-    {
-        return view('auth.register');
     }
 }

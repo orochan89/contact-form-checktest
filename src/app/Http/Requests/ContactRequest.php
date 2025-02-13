@@ -30,7 +30,7 @@ class ContactRequest extends FormRequest
             'gender' => 'required',
             'email' => 'required|email',
             'address' => 'required',
-            'category' => 'required',
+            'category_id' => 'required',
             'detail' => 'required|string|max:120',
 
             'tel1' => 'nullable|required_unless:tel2,""|required_unless:tel3,""|max:5',
@@ -47,12 +47,17 @@ class ContactRequest extends FormRequest
             'gender.required' => '性別を選択してください',
             'email.required' => 'メールアドレスを入力してください',
             'email.email' => 'メールアドレスはメール形式で入力してください',
-            'tell.required' => '電話番号を入力してください',
-            'tell.max' => '電話番号は5桁までの数字で入力してください',
             'address.required' => '住所を入力してください',
-            'category.required' => 'お問い合わせの種類を選択してください',
+            'category_id.required' => 'お問い合わせの種類を選択してください',
             'detail.required' => 'お問い合わせ内容を入力してください',
-            'detail.max' => 'お問い合わせ内容は120文字以内で入力してください'
+            'detail.max' => 'お問い合わせ内容は120文字以内で入力してください',
+
+            'tel1.required_unless' => '電話番号を入力してください',
+            'tel1.max' => '電話番号は5桁までの数字で入力してください',
+            'tel2.required_unless' => '電話番号を入力してください',
+            'tel2.max' => '電話番号は5桁までの数字で入力してください',
+            'tel3.required_unless' => '電話番号を入力してください',
+            'tel3.max' => '電話番号は5桁までの数字で入力してください',
         ];
     }
 }

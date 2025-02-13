@@ -27,8 +27,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', [ContactController::class, 'index']);
 
-Route::get('/confirm', [ContactController::class, 'confirm']);
+Route::post('/post', [ContactController::class, 'post']);
 
-Route::get('/thanks', [ContactController::class, 'thanks']);
+Route::post('/confirm', [ContactController::class, 'confirm']);
 
 Route::get('/modal', [ModalController::class, 'modal']);
