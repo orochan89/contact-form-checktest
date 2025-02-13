@@ -1,3 +1,8 @@
+svg.w-5.h-5 {
+    width: 30px;
+    height: 30px;
+}
+
 .header-nav__logout {
     background: #f9f9f9;
     border: 1px solid #bba99a;
@@ -23,6 +28,12 @@
 }
 
 .admin__content-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.export-and-pages {
     display: flex;
     justify-content: space-between;
     align-items: center;

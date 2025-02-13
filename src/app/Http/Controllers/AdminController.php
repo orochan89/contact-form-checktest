@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function admin()
+    public function index()
     {
-        $items = Contact::all();
-        return view('admin', compact('item'));
+        $items = Contact::with('category')->get();
+
+        $items = Contact::Paginate(7);
+        return view('admin', compact('items'));
     }
 }

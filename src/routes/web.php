@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ModalController;
@@ -20,10 +21,11 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 */
 
 // AdminAccount
-Route::middleware('auth')->group(function () {
-    Route::get('/admin', [ContactController::class, 'admin']);
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/admin', [AdminController::class, 'index']);
+// });
 
+Route::get('/admin', [AdminController::class, 'index']);
 
 Route::get('/', [ContactController::class, 'index']);
 

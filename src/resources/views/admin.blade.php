@@ -47,17 +47,19 @@
                 </button>
         </form>
     </div>
-    <div class="export-and-pages">
-        <form class="csv-export" action="" method="post">
+    <form class="csv-export" action="" method="post">
+        <div class="export-and-pages">
+
             <button class="csv-export__button">
                 エクスポート
             </button>
             <div class="pages"> </div>
-        </form>
-        <div class="pagenation">
-            {{-- {{ $content->links() }} --}}
+
+            <div class="pagenation">
+                {{ $items->links() }}
+            </div>
         </div>
-    </div>
+    </form>
     <table class="search-result-table">
         <tr class="search-result-table__row">
             <th class="search-result-table__th">
@@ -76,16 +78,24 @@
         @foreach ($items as $item)
             <tr class="search-result-table__row">
                 <td class="search-result-table__td">
-                    <p class="search-result-table__hit"></p>
+                    <p class="search-result-table__hit">{{ $item['last_name'] }} {{ $item['first_name'] }}</p>
                 </td>
                 <td class="search-result-table__td">
-                    <p class="search-result-table__hit"></p>
+                    <p class="search-result-table__hit">
+                        @if ($item['gender'] == 1)
+                            男性
+                        @elseif($item['gender'] == 2)
+                            女性
+                        @elseif($item['gender'] == 3)
+                            その他
+                        @endif
+                    </p>
                 </td>
                 <td class="search-result-table__td">
-                    <p class="search-result-table__hit"></p>
+                    <p class="search-result-table__hit">{{ $item['email'] }}</p>
                 </td>
                 <td class="search-result-table__td">
-                    <p class="search-result-table__hit"></p>
+                    <p class="search-result-table__hit">{{ $item->category->content }}</p>
                 </td>
                 <td class="search-result-table__td">
                     <button class="search-result-detail">詳細</button>
