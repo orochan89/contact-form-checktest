@@ -1,0 +1,29 @@
+.header-nav__logout {
+    background: #f9f9f9;
+    border: 1px solid #bba99a;
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
+    padding: 10px 30px;
+    transform: translate(0px, -15px);
+    box-sizing: border-box;
+    color: #bba99a;
+    font-size: 15px;
+}
+
+.admin__content--title {
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+    color: #bba99a;
+}
+
+.admin__content__inner {
+    margin: 0 10%;
+}
+
+.admin__content-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

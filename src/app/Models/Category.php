@@ -13,8 +13,8 @@ class Category extends Model
         'content'
     ];
 
-    public function contact()
-    {
-        return $this->BelongsTo(Contact::class);
-    }
+    // public function contact()
+    // {
+    //     return $this->BelongsTo(Contact::class);
+    // }
 }

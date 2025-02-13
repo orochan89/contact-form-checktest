@@ -21,9 +21,9 @@ class Contact extends Model
         'detail'
     ];
 
-    public function category_id()
+    public function category()
     {
-        return $this->hasMany(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     // public function scope($query, $){
