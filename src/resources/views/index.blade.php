@@ -9,7 +9,7 @@
 @section('content')
     <div class="contact__content">
         <h2 class="contact__content--title">Contact</h2>
-        <form class="contact-form" action="/post" method="post">
+        <form class="contact-form" action="/confirm" method="post">
             @csrf
             <table class="contact-form--table">
                 <tr class="contact-form--table__row">

@@ -28,4 +28,12 @@ class AdminController extends Controller
         $genders = Contact::pluck('gender');
         return view('admin', compact('contacts', 'categories', 'genders'));
     }
+
+    public function destroy($id)
+    {
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+
+        return redirect('/admin');
+    }
 }
