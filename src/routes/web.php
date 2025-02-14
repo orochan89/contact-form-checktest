@@ -26,6 +26,7 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 // });
 
 Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin/search', [AdminController::class, 'search']);
 
 Route::get('/', [ContactController::class, 'index']);
 

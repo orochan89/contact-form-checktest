@@ -22,27 +22,28 @@
         </h2>
     </div>
     <div class="admin__content__inner">
-        <form class="search-form" action="" method="get">
+        <form class="search-form" action="/admin/search" method="get">
             <div class="admin__content-search">
                 @csrf
-                <input class="search-form__keyword" type="text">
+                <input class="search-form__keyword" type="text" name="keyword" value="{{ old('keyword') }}">
                 <select class="search-form__gender" name="gender">
-                    {{-- @foreach ($genders as $gender)
-                        <option class="search-form__gender-option" value="{{ $item['gender'] }}">{{ $gender_string }}
-                        </option>
-                    @endforeach --}}
+                    <option value="">性別</option>
+                    <option value="1" {{ request('gender') == '1' }}>男性</option>
+                    <option value="2" {{ request('gender') == '2' }}>女性</option>
+                    <option value="3" {{ request('gender') == '3' }}>その他</option>
                 </select>
-                <select class="search-form__category" name="category">
-                    {{-- @foreach ($categories as $category)
-                        <option class="search-form__category-option" value="{{ $item['category_id'] }}">
+                <select class="search-form__category" name="category_id">
+                    <option value="">お問い合わせの種類</option>
+                    @foreach ($categories as $category)
+                        <option class="search-form__category-option" value="{{ $category->id }}">
                             {{ $category->content }}</option>
-                    @endforeach --}}
+                    @endforeach
                 </select>
-                <input class="search-form__date" type="date" name="date">
-                <button class="search-form__search-submit">
+                <input class="search-form__date" type="date" name="created_at" value="{{ old('created_at') }}">
+                <button class="search-form__search-submit" value="search" type="submit">
                     検索
                 </button>
-                <button class="search-form__search-reset">
+                <button class="search-form__search-reset" value="reset">
                     リセット
                 </button>
         </form>
@@ -55,7 +56,7 @@
             </button>
             <div class="pages"> </div>
 
-            <div class="pagenation">
+            <div class="pagination">
                 {{ $items->links() }}
             </div>
         </div>
