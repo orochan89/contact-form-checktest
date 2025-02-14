@@ -25,7 +25,8 @@
         <form class="search-form" action="/admin/search" method="get">
             <div class="admin__content-search">
                 @csrf
-                <input class="search-form__keyword" type="text" name="keyword" value="{{ old('keyword') }}">
+                <input class="search-form__keyword" type="text" name="keyword" value="{{ old('keyword') }}"
+                    placeholder="名前やメールアドレスを入力してください">
                 <select class="search-form__gender" name="gender">
                     <option value="">性別</option>
                     <option value="1" {{ request('gender') == '1' }}>男性</option>
@@ -118,17 +119,17 @@
                     @csrf
                     @method('delete')
                     <table class="modal-table">
-                        <tr>
-                            <th>お名前</th>
-                            <td>
+                        <tr class="modal-table__tr">
+                            <th class="modal-table__th">お名前</th>
+                            <td class="modal-table__td">
                                 <input type="hidden" name="last_name" value="{{ $modalContact['last_name'] }}" readonly>
                                 <input type="hidden" name="first_name" value="{{ $modalContact['first_name'] }}" readonly>
                                 {{ $modalContact['last_name'] }} {{ $modalContact['first_name'] }}
                             </td>
                         </tr>
-                        <tr>
-                            <th>性別</th>
-                            <td>
+                        <tr class="modal-table__tr">
+                            <th class="modal-table__th">性別</th>
+                            <td class="modal-table__td">
                                 <input type="hidden" name="gender" value="{{ $modalContact['gender'] }}" readonly>
                                 @if ($modalContact['gender'] == '1')
                                     男性
@@ -139,44 +140,46 @@
                                 @endif
                             </td>
                         </tr>
-                        <tr>
-                            <th>メールアドレス</th>
-                            <td>
+                        <tr class="modal-table__tr">
+                            <th class="modal-table__th">メールアドレス</th>
+                            <td class="modal-table__td">
                                 <input type="hidden" name="email" value="{{ $modalContact['email'] }}" readonly>
                                 {{ $modalContact['email'] }}
                             </td>
                         </tr>
-                        <tr>
-                            <th>電話番号</th>
-                            <td>
+                        <tr class="modal-table__tr">
+                            <th class="modal-table__th">電話番号</th>
+                            <td class="modal-table__td">
                                 <input type="hidden" name="tell" value="{{ $modalContact['tell'] }}" readonly>
                                 {{ $modalContact['tell'] }}
                             </td>
                         </tr>
-                        <tr>
-                            <th>建物名</th>
-                            <td>
+                        <tr class="modal-table__tr">
+                            <th class="modal-table__th">建物名</th>
+                            <td class="modal-table__td">
                                 <input type="hidden" name="building" value="{{ $modalContact['building'] }}" readonly>
                                 {{ $modalContact['building'] }}
                             </td>
                         </tr>
-                        <tr>
-                            <th>お問い合わせの種類</th>
-                            <td>
+                        <tr class="modal-table__tr">
+                            <th class="modal-table__th">お問い合わせの種類</th>
+                            <td class="modal-table__td">
                                 <input type="hidden" name="category_id" value="{{ $modalContact['category_id'] }}"
                                     readonly>
                                 {{ $modalContact->category->content }}
                             </td>
                         </tr>
-                        <tr>
-                            <th>お問い合わせ内容</th>
-                            <td>
+                        <tr class="modal-table__tr">
+                            <th class="modal-table__th">お問い合わせ内容</th>
+                            <td class="modal-table__td">
                                 <input type="hidden" name="detail" value="{{ $modalContact['detail'] }}" readonly>
                                 {{ $modalContact['detail'] }}
                             </td>
                         </tr>
                     </table>
-                    <button class="delete__button" type="submit">削除</button>
+                    <div class="modal-delete__button__mod">
+                        <button class="modal-delete__button" type="submit">削除</button>
+                    </div>
                 </form>
             </div>
         </div>

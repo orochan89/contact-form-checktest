@@ -18,7 +18,7 @@
 5. php artisan migrate
 6. php artisan db:seed
 
-以下開発環境envファイル
+以下開発環境envファイル  
 APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=base64:LsrMPt9TMB+WyOLeSryHbuO5N/aOfb1qqCBjjRJ36OA=
@@ -84,3 +84,6 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 ・ 開発環境 : http://localhost/  
 ・ phpMyAdmin : http://localhost:8080/
+
+## 注意事項
+・ '/admin' のエクスポートは準備中です。
