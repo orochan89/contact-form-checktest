@@ -11,15 +11,17 @@
 </head>
 
 <body>
-    <div class="thanks__content">
-        <h2 class="thanks__content-item">お問い合わせありがとうございました</h2>
-    </div>
-    <form class="thanks-form" action="/" method="get">
-        @csrf
-        <div class="thanks-form__button">
-            <button class="thanks-form__button-home">HOME</button>
+    <div class="thanks">
+        <div class="thanks__content">
+            <h2 class="thanks__content-item">お問い合わせありがとうございました</h2>
         </div>
-    </form>
+        <form class="thanks-form" action="/" method="get">
+            @csrf
+            <div class="thanks-form__button">
+                <button class="thanks-form__button-home" type="sunbmit">HOME</button>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>

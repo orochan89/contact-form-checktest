@@ -12,7 +12,7 @@
         <h2 class="confirm-content--title">
             Confirm
         </h2>
-        <form class="confirm-form" action="/confirm" method="post">
+        <form class="confirm-form" action="/thanks" method="post">
             @csrf
             <table class="confirm-table">
                 <tr class="confirm-table__row">

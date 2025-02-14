@@ -1,12 +1,14 @@
-body {
-    
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .thanks__content {
-    margin-top: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 20%;
 }
 
 .thanks__content-item {
@@ -18,11 +20,11 @@ body {
 .thanks-form__button {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    width: 100%;
 }
 
 .thanks-form__button-home {
-    margin: 10px auto;
     padding: 10px 20px;
     background: #bba99a;
     color: #fff;

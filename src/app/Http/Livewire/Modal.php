@@ -12,7 +12,7 @@ class Modal extends Component
 
     public function render()
     {
-        return view('livewire.modal', ['contacts' => Contact::with('category')]);
+        // return view('livewire.modal', ['contacts' => Contact::with('category')]);
     }
 
     public function openModal()

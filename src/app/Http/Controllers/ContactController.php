@@ -16,7 +16,7 @@ class ContactController extends Controller
         return view('index', compact('categories'));
     }
 
-    public function post(ContactRequest $request)
+    public function confirm(ContactRequest $request)
     {
         $input = $request->only(['first_name', 'last_name', 'gender', 'email', 'address', 'building', 'category_id', 'detail']);
         $tell = $request->tel1 . $request->tel2 . $request->tel3;
@@ -34,7 +34,7 @@ class ContactController extends Controller
         return view('/thanks');
     }
 
-    public function confirm(Request $request)
+    public function thanks(Request $request)
     {
         $action = $request->input('action');
 

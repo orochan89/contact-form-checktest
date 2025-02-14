@@ -21,17 +21,14 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 */
 
 // AdminAccount
-// Route::middleware('auth')->group(function () {
-//     Route::get('/admin', [AdminController::class, 'index']);
-// });
-
-Route::get('/admin', [AdminController::class, 'index']);
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [AdminController::class, 'index']);
+});
 Route::get('/admin/search', [AdminController::class, 'search']);
+Route::delete('/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
 
 Route::get('/', [ContactController::class, 'index']);
 
-Route::post('/post', [ContactController::class, 'post']);
-
 Route::post('/confirm', [ContactController::class, 'confirm']);
 
-Route::get('/modal', [ModalController::class, 'modal']);
+Route::post('/thanks', [ContactController::class, 'thanks']);
