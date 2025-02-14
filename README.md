@@ -25,7 +25,6 @@
 ・ MySQL 8.0.26
 
 ## ER 図
-![ER drawio](https://github.com/user-attachments/assets/f70c8348-6700-4932-b7b3-6a9f205d97da)
 
 ## URL
 
