@@ -39,17 +39,96 @@ svg.w-5.h-5 {
     align-items: center;
 }
 
+.search-form__keyword {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid gray;
+    color: gray;
+}
+
+.search-form__gender{
+    width: 10%;
+    padding: 10px;
+    border: 1px solid gray;
+    color: gray;
+}
+
+.search-form__category{
+    width: 15%;
+    padding: 10px;
+    border: 1px solid gray;
+    color: gray;
+}
+
+.search-form__date {
+    width: 10%;
+    padding: 10px;
+    border: 1px solid gray;
+    color: gray;
+}
+
+.search-form__search-submit{
+    width: 10%;
+    padding: 10px;
+    background: #bba99a;
+    color: #f9f9f9;
+    font-weight: bold;
+}
+
+.search-form__search-reset{
+    width: 10%;
+    padding: 10px;
+    background: #e7d0be;
+    color: #f9f9f9;
+    font-weight: bold;
+}
+
+.csv-export__button{
+    width: 10%;
+    padding: 10px;
+    background-color: #bba99a;
+    color: #f9f9f9;
+    font-weight: bold;
+}
+
+
+.search-result-table{
+    border-collapse:  collapse;
+    width: 100%;
+}
+
+.search-result-table__th{
+    border: 1px solid #bba99a;
+    text-align: center;
+    background: #bba99a;
+    color: #f9f9f9;
+}
+
+.search-result-table__td{
+    border: 1px solid #bba99a;
+    text-align: center;
+    color: #bba99a;
+}
+
+.open-modal-button{
+    width: 80%;
+    background: #f9f9f9;
+    color: #bba99a;
+    border: 1px solid #bba99a;
+}
+
+
 
 /* モーダルの基本スタイル */
 .modal {
-    display: none; /* 初めは非表示 */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景 */
-    z-index: 1; /* 最前面に表示 */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 /* モーダルのコンテンツ部分 */
@@ -59,9 +138,33 @@ svg.w-5.h-5 {
     margin: 10% auto;
     padding: 20px;
     width: 100%;
-    max-width: 500px;
+    max-width: 800px;
+    height: 50%;
+    max-height: 800px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-table__th{
+    width: 30%;
+    padding: 10px;
+}
+
+.modal-table__td {
+    width: 70%;
+    padding: 10px;
+}
+
+.modal-delete__button__mod{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.modal-delete__button{
+    padding: 10px 20px;
+    background: #ff0000;
+    color: #fff;
 }
 
 /* 閉じるボタン */
@@ -76,5 +179,5 @@ svg.w-5.h-5 {
 
 /* モーダルを表示するためのリンク */
 #modal:target {
-    display: block; /* #modalがターゲットになると表示 */
+    display: block;
 }
