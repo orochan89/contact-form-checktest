@@ -1,5 +1,7 @@
 @extends('layouts/app')
 
+@livewireStyles
+
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 @endsection
@@ -57,7 +59,7 @@
             <div class="pages"> </div>
 
             <div class="pagination">
-                {{ $items->links() }}
+                {{ $contacts->links() }}
             </div>
         </div>
     </form>
@@ -76,33 +78,112 @@
                 <p class="search-result-table-name">お問い合わせの種類</p>
             </th>
         </tr>
-        @foreach ($items as $item)
+        @foreach ($contacts as $contact)
             <tr class="search-result-table__row">
                 <td class="search-result-table__td">
-                    <p class="search-result-table__hit">{{ $item['last_name'] }} {{ $item['first_name'] }}</p>
+                    <p class="search-result-table__hit">{{ $contact['last_name'] }} {{ $contact['first_name'] }}</p>
                 </td>
                 <td class="search-result-table__td">
                     <p class="search-result-table__hit">
-                        @if ($item['gender'] == 1)
+                        @if ($contact['gender'] == 1)
                             男性
-                        @elseif($item['gender'] == 2)
+                        @elseif($contact['gender'] == 2)
                             女性
-                        @elseif($item['gender'] == 3)
+                        @elseif($contact['gender'] == 3)
                             その他
                         @endif
                     </p>
                 </td>
                 <td class="search-result-table__td">
-                    <p class="search-result-table__hit">{{ $item['email'] }}</p>
+                    <p class="search-result-table__hit">{{ $contact['email'] }}</p>
                 </td>
                 <td class="search-result-table__td">
-                    <p class="search-result-table__hit">{{ $item->category->content }}</p>
+                    <p class="search-result-table__hit">{{ $contact->category->content }}</p>
                 </td>
                 <td class="search-result-table__td">
-                    <button class="search-result-detail">詳細</button>
+                    <button wire:click="openModal()">詳細</button>
                 </td>
             </tr>
         @endforeach
     </table>
+    </div>
+    <div>
+        @if ($showModal)
+            <div>
+                <button wire:click="closeModal" class="">
+                </button>
+            </div>
+            <table>
+                <tr class="Modal__table__row">
+                    <th class="Modal__table__th">
+                        お名前
+                    </th>
+                    <td class="Modal__table__td">
+                        {{ $contact['last_name'] }} {{ $contact['first_name'] }}
+                    </td>
+                </tr>
+                <tr class="Modal__table__row">
+                    <th class="Modal__table__th">
+                        性別
+                    </th>
+                    <td class="Modal__table__td">
+                        {{ $contact['gender'] }}
+                    </td>
+                </tr>
+                <tr class="Modal__table__row">
+                    <th class="Modal__table__th">
+                        メールアドレス
+                    </th>
+                    <td class="Modal__table__td">
+                        {{ $contact['email'] }}
+                    </td>
+                </tr>
+                <tr class="Modal__table__row">
+                    <th class="Modal__table__th">
+                        電話番号
+                    </th>
+                    <td class="Modal__table__td">
+                        {{ $contact['tell'] }}
+                    </td>
+                </tr>
+                <tr class="Modal__table__row">
+                    <th class="Modal__table__th">
+                        住所
+                    </th>
+                    <td class="Modal__table__td">
+                        {{ $contact['address'] }}
+                    </td>
+                </tr>
+                <tr class="Modal__table__row">
+                    <th class="Modal__table__th">
+                        建物名
+                    </th>
+                    <td class="Modal__table__td">
+                        {{ $contact['building'] }}
+                    </td>
+                </tr>
+                <tr class="Modal__table__row">
+                    <th class="Modal__table__th">
+                        お問い合わせの種類
+                    </th>
+                    <td class="Modal__table__td">
+                        {{ $contact->category->content }}
+                    </td>
+                </tr>
+                <tr class="Modal__table__row">
+                    <th class="Modal__table__th">
+                        お問い合わせの内容
+                    </th>
+                    <td class="Modal__table__td">
+                        {{ $contact['detail'] }}
+                    </td>
+                </tr>
+            </table>
+            <div class="">
+                <button wire:click="delete({{ $contact_id }})" class="">
+                    削除
+                </button>
+            </div>
+        @endif
     </div>
 @endsection

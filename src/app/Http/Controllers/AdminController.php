@@ -10,12 +10,11 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $items = Contact::with('category')->get();
-
-        $items = Contact::Paginate(7);
+        $contacts = Contact::with('category')->get();
+        $contacts = Contact::Paginate(7);
         $categories = Category::all();
         $genders = Contact::pluck('gender')->unique;
-        return view('admin', compact('items', 'categories', 'genders'));
+        return view('admin', compact('contacts', 'categories', 'genders', 'contacts'));
     }
 
     public function search(Request $request)
@@ -24,9 +23,9 @@ class AdminController extends Controller
             return redirect()->route('admin.search');
         }
 
-        $items = Contact::with('category')->CategorySearch($request->category_id)->GenderSearch($request->gender)->DateSearch($request->created_at)->KeywordSearch($request->keyword)->Paginate(7);
+        $contacts = Contact::with('category')->CategorySearch($request->category_id)->GenderSearch($request->gender)->DateSearch($request->created_at)->KeywordSearch($request->keyword)->Paginate(7);
         $categories = Category::all();
         $genders = Contact::pluck('gender');
-        return view('admin', compact('items', 'categories', 'genders'));
+        return view('admin', compact('contacts', 'categories', 'genders'));
     }
 }

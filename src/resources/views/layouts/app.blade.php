@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     @livewireStyles
 </head>
 
-<body class=""font-sans text-gray-900 antialiased"">
+<body class="font-sans text-gray-900 antialiased">
     <header class="header">
         <div class="header__inner">
             <div class="header-utilities">
@@ -26,7 +26,6 @@
 
     <main>
         @yield('content')
-        @livewireScripts
     </main>
 </body>
 
